@@ -1,0 +1,79 @@
+{
+	"$schema": "../node_modules/@tauri-apps/cli/schema.json",
+	"build": {
+		"beforeBuildCommand": "npm run sveltekit:build",
+		"beforeDevCommand": "npm run sveltekit:dev",
+		"devPath": "http://localhost:3000",
+		"distDir": "../build"
+	},
+	"package": {
+		"productName": "widgets",
+		"version": "0.1.0"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": true,
+			"shell": {
+				"all": true,
+				"execute": true,
+				"open": true,
+				"sidecar": true,
+				"scope": []
+			}
+		},
+		"bundle": {
+			"active": true,
+			"category": "DeveloperTool",
+			"copyright": "",
+			"deb": {
+				"depends": []
+			},
+			"externalBin": [],
+			"icon": [
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			],
+			"identifier": "com.stijnb.tauri-sveltekit-example",
+			"longDescription": "",
+			"macOS": {
+				"entitlements": null,
+				"exceptionDomain": "",
+				"frameworks": [],
+				"providerShortName": null,
+				"signingIdentity": null
+			},
+			"resources": [],
+			"shortDescription": "",
+			"targets": "all",
+			"windows": {
+				"certificateThumbprint": null,
+				"digestAlgorithm": "sha256",
+				"timestampUrl": ""
+			}
+		},
+		"security": {
+			"csp": null
+		},
+		"updater": {
+			"active": false
+		},
+		"windows": [
+			{
+				"x": 734.5,
+				"y": 40,
+				"title": "widgets",
+				"width": 734.5,
+				"height": 1000,
+				"resizable": true,
+				"fullscreen": false,
+				"transparent": true,
+				"decorations": false,
+				"alwaysOnTop": true
+			}
+		],
+		"macOSPrivateApi": true
+	}
+}
