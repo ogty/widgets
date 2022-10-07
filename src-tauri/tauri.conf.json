@@ -36,7 +36,7 @@
 				"icons/icon.icns",
 				"icons/icon.ico"
 			],
-			"identifier": "com.stijnb.tauri-sveltekit-example",
+			"identifier": "com.ogty.widgets",
 			"longDescription": "",
 			"macOS": {
 				"entitlements": null,
