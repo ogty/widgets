@@ -1,7 +1,7 @@
 <h1 align="center">Widgets</h1>
 
 <div align="center">
-  <img src="./static/image.png" />
+  <img src="./static/image.png" width="70%" />
 </div>
 
 ## 🎵 Adding BGM from YouTube
