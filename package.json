@@ -37,6 +37,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tauri-apps/api": "^1.1.0"
+		"@tauri-apps/api": "^1.1.0",
+		"@types/marked": "^4.0.7",
+		"marked": "^4.1.1"
 	}
 }

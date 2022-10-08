@@ -69,7 +69,7 @@
 		/>
 	</Template>
 	{#if todos.length}
-		<div class="flex p-2 border-x border-slate-400 border-b rounded-b-md">
+		<div class="flex p-2 border-x border-slate-300 border-b rounded-b-md">
 			<div class="w-1/2 grid gap-2 pr-2">
 				{#each todos.filter((t) => !t.done) as todo (todo.id)}
 					<label
@@ -92,7 +92,7 @@
 					</label>
 				{/each}
 			</div>
-			<div class="w-1/2 pl-2 grid gap-2 border-l border-dashed border-slate-400">
+			<div class="w-1/2 pl-2 grid gap-2 border-l border-dashed border-slate-300">
 				{#each todos.filter((t) => t.done) as todo (todo.id)}
 					<label
 						class="done flex h-fit items-center"

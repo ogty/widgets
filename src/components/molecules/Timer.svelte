@@ -75,7 +75,7 @@
 		margin: 0;
 		-webkit-appearance: none;
 	}
-  .left-popover {
-    backdrop-filter: blur(10px);
-  }
+	.left-popover {
+		backdrop-filter: blur(10px);
+	}
 </style>

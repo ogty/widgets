@@ -16,7 +16,7 @@
 </script>
 
 <div
-	class="p-1 h-fit relative text-sm text-slate-300 border border-slate-400"
+	class="p-1 h-fit relative text-sm text-slate-300 border border-slate-300"
 	class:w-full={isLeftWidthFull}
 	class:rounded-md={rounded}
 	class:rounded-t-md={roundedTop}
@@ -25,7 +25,7 @@
 	<div class="w-full flex items-center mx-0 my-auto">
 		{#if LeftIcon || $$slots.left}
 			<div
-				class=" mr-2 py-2 pl-1 pr-2 border-r border-slate-400"
+				class=" mr-2 py-2 pl-1 pr-2 border-r border-slate-300"
 				class:cursor-pointer={leftOnClick ?? false}
 			>
 				<div class="w-full" on:click={leftOnClick}>
@@ -36,8 +36,8 @@
 				{#if $$slots.leftPopover}
 					{#if leftPopoverTrigger}
 						<div
-							class="rounded-md left-0 top-12 border border-slate-400 absolute z-10"
-              style:left="-1px"
+							class="rounded-md left-0 top-12 border border-slate-300 absolute z-10"
+							style:left="-1px"
 						>
 							<slot name="leftPopover" />
 						</div>
@@ -54,7 +54,7 @@
 		{/if}
 		{#if RightIcon || $$slots.right}
 			<div
-				class="border-l border-slate-400 ml-2 py-2 pl-2 pr-1"
+				class="border-l border-slate-300 ml-2 py-2 pl-2 pr-1"
 				class:cursor-pointer={rightOnClick ?? false}
 			>
 				<div on:click={rightOnClick}>
@@ -64,10 +64,7 @@
 				</div>
 				{#if $$slots.rightPopover}
 					{#if rightPopoverTrigger}
-						<div
-							class="rounded-md top-12 z-10 border border-slate-400 absolute"
-              style:right="-1px"
-						>
+						<div class="rounded-md top-12 z-10 border border-slate-300 absolute" style:right="-1px">
 							<slot name="rightPopover" />
 						</div>
 					{/if}

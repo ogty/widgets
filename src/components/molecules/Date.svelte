@@ -5,5 +5,5 @@
 </script>
 
 <Template LeftIcon={Calendar}>
-  {dateFormatter(new Date())}
+	{dateFormatter(new Date())}
 </Template>
