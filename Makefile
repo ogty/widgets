@@ -132,8 +132,8 @@ replace-settings:
 	&& rm $(SETTINGS_START_TMP_FILE) $(SETTINGS_CENTER_TMP_FILE)
 
 site-atoms:
-	@cat $(COMPONENTS_FILE)             \
-	| jq '.[] | [select(.url != null)]' \
+	@cat $(COMPONENTS_FILE)                           \
+	| jq '.[] | [select(.url != null)]'               \
 	| jq -r '.[] | .name + " " + .icon + " " + .url'  \
 	| awk "$$makeSiteComponent"
 
