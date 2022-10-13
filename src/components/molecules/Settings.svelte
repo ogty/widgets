@@ -12,6 +12,8 @@
 		isShowGoogle,
 		isShowTwitter,
 		isShowSlack,
+		isShowTypeScript,
+		isShowStackOverflow,
 		isShowTimer,
 		isShowTodo,
 		isShowMemo,
@@ -34,6 +36,96 @@
 >
 	<div slot="leftPopover" class="p-2 rounded-md">
 		<ul>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowTimer.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowTimer}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Timer</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowTodo.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowTodo}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Todo</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowMemo.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowMemo}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Memo</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowDate.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowDate}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Date</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowTerminal.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowTerminal}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Terminal</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowAudioPlayer.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowAudioPlayer}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">AudioPlayer</span>
+			</li>
 			<li
 				class="flex"
 				on:click={() => {
@@ -153,6 +245,36 @@
 					{/if}
 				</span>
 				<span class="ml-2">Slack</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowTypeScript.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowTypeScript}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">TypeScript</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowStackOverflow.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowStackOverflow}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">StackOverflow</span>
 			</li>
 		</ul>
 	</div>

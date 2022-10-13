@@ -1,9 +1,3 @@
-		{#if $isShowTimer}
-			<Timer />
-		{/if}
-		{#if $isShowDate}
-			<Date />
-		{/if}
 	</div>
 	{#if $isShowMemo}
 		<Memo />

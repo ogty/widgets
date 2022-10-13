@@ -18,5 +18,11 @@
 </script>
 
 <div class="p-2 flex flex-wrap gap-2 w-screen">
-	<div class="grid grid-flow-col gap-2">
+	<div class="flex flex-wrap" style:gap="7.4px">
 		<Settings />
+    {#if $isShowTimer}
+			<Timer />
+		{/if}
+		{#if $isShowDate}
+			<Date />
+		{/if}

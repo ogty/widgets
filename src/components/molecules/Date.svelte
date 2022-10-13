@@ -5,5 +5,7 @@
 </script>
 
 <Template LeftIcon={Calendar}>
-	{dateFormatter(new Date())}
+	<div style="padding-left: 12.2px; padding-right: 12.2px;">
+		{dateFormatter(new Date())}
+	</div>
 </Template>

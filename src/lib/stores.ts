@@ -31,3 +31,5 @@ export const isShowMicrosoftTeams = writable(true);
 export const isShowGoogle = writable(true);
 export const isShowTwitter = writable(true);
 export const isShowSlack = writable(true);
+export const isShowTypeScript = writable(true);
+export const isShowStackOverflow = writable(true);

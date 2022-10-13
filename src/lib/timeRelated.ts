@@ -8,7 +8,7 @@ export function timeFormatter(seconds: number): string {
 		const minutes = Math.floor(seconds / 60);
 		const differenceSeconds = seconds - 60 * minutes;
 		const differenceMinutes = minutes - 60 * hours;
-		return `${paddingZero(hours)}h${paddingZero(differenceMinutes)}min${paddingZero(
+		return `${paddingZero(hours)}h${paddingZero(differenceMinutes)}m${paddingZero(
 			differenceSeconds
 		)}s`;
 	} else if (seconds > 59) {

@@ -46,5 +46,17 @@
 		"icon": "Slack",
 		"path": "Slack",
 		"default": true
+	},
+	{
+		"name": "TypeScript",
+		"icon": "TypeScript",
+		"url": "https://www.typescriptlang.org/play",
+		"default": true
+	},
+	{
+		"name": "StackOverflow",
+		"icon": "StackOverflow",
+		"url": "https://stackoverflow.com",
+		"default": true
 	}
 ]

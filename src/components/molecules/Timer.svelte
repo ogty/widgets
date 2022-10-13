@@ -58,7 +58,9 @@
 		</div>
 	</div>
 	{#if typeof count === 'number' && count !== 0}
-		{timeFormatter(count)}
+		<div style="padding-left: 12.4px; padding-right: 12.4px;">
+			{timeFormatter(count)}
+		</div>
 	{/if}
 	<div slot="right">
 		{#if $isSetTimer}

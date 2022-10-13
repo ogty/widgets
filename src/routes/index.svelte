@@ -1,12 +1,14 @@
 <script lang="ts">
-	import GitHub from '@atoms/Github.svelte';
-	import YouTube from '@atoms/Youtube.svelte';
+	import GitHub from '@atoms/GitHub.svelte';
+	import YouTube from '@atoms/YouTube.svelte';
 	import SystemPreferences from '@atoms/SystemPreferences.svelte';
 	import ActivityMonitor from '@atoms/ActivityMonitor.svelte';
 	import MicrosoftTeams from '@atoms/MicrosoftTeams.svelte';
 	import Google from '@atoms/Google.svelte';
 	import Twitter from '@atoms/Twitter.svelte';
 	import Slack from '@atoms/Slack.svelte';
+	import TypeScript from '@atoms/TypeScript.svelte';
+	import StackOverflow from '@atoms/StackOverflow.svelte';
 
 	import Todo from '@atoms/Todo.svelte';
 	import Memo from '@atoms/Memo.svelte';
@@ -25,6 +27,8 @@
 		isShowGoogle,
 		isShowTwitter,
 		isShowSlack,
+		isShowTypeScript,
+		isShowStackOverflow,
 		isShowDate,
 		isShowTimer,
 		isShowTodo,
@@ -35,8 +39,14 @@
 </script>
 
 <div class="p-2 flex flex-wrap gap-2 w-screen">
-	<div class="grid grid-flow-col gap-2">
+	<div class="flex flex-wrap" style:gap="7.4px">
 		<Settings />
+		{#if $isShowTimer}
+			<Timer />
+		{/if}
+		{#if $isShowDate}
+			<Date />
+		{/if}
 		{#if $isShowGitHub}
 			<GitHub />
 		{/if}
@@ -61,11 +71,11 @@
 		{#if $isShowSlack}
 			<Slack />
 		{/if}
-		{#if $isShowTimer}
-			<Timer />
+		{#if $isShowTypeScript}
+			<TypeScript />
 		{/if}
-		{#if $isShowDate}
-			<Date />
+		{#if $isShowStackOverflow}
+			<StackOverflow />
 		{/if}
 	</div>
 	{#if $isShowMemo}
