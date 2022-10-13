@@ -6,7 +6,7 @@
 
 ## ⚙️ Add a component
 
-### Available Keys
+### 🔑 Available Keys
 
 - `name`
 - `icon`
@@ -30,7 +30,7 @@ If `app` is present, a component that opens the specified app is generated.
 ]
 ```
 
-### Creating icons from `components.json`
+### 📷 Creating icons from components.json
 
 ```zsh
 $ make download-icons
