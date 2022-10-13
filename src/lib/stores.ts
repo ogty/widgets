@@ -33,3 +33,5 @@ export const isShowTwitter = writable(true);
 export const isShowSlack = writable(true);
 export const isShowTypeScript = writable(true);
 export const isShowStackOverflow = writable(true);
+export const isShowMedium = writable(true);
+export const isShowGmail = writable(true);

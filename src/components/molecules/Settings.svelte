@@ -14,6 +14,8 @@
 		isShowSlack,
 		isShowTypeScript,
 		isShowStackOverflow,
+		isShowMedium,
+		isShowGmail,
 		isShowTimer,
 		isShowTodo,
 		isShowMemo,
@@ -275,6 +277,36 @@
 					{/if}
 				</span>
 				<span class="ml-2">StackOverflow</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowMedium.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowMedium}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Medium</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowGmail.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowGmail}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Gmail</span>
 			</li>
 		</ul>
 	</div>

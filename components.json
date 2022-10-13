@@ -59,5 +59,18 @@
 		"icon": "StackOverflow",
 		"url": "https://stackoverflow.com",
 		"default": true
+	},
+	{
+		"name": "Medium",
+		"icon": "Medium",
+		"url": "https://medium.com",
+		"default": true
+	},
+	{
+		"name": "Gmail",
+		"icon": "Gmail",
+		"url": "https://mail.google.com/mail",
+		"default": true,
+		"create": false
 	}
 ]

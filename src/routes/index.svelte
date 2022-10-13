@@ -9,6 +9,8 @@
 	import Slack from '@atoms/Slack.svelte';
 	import TypeScript from '@atoms/TypeScript.svelte';
 	import StackOverflow from '@atoms/StackOverflow.svelte';
+	import Medium from '@atoms/Medium.svelte';
+	import Gmail from '@atoms/Gmail.svelte';
 
 	import Todo from '@atoms/Todo.svelte';
 	import Memo from '@atoms/Memo.svelte';
@@ -29,6 +31,8 @@
 		isShowSlack,
 		isShowTypeScript,
 		isShowStackOverflow,
+		isShowMedium,
+		isShowGmail,
 		isShowDate,
 		isShowTimer,
 		isShowTodo,
@@ -76,6 +80,12 @@
 		{/if}
 		{#if $isShowStackOverflow}
 			<StackOverflow />
+		{/if}
+		{#if $isShowMedium}
+			<Medium />
+		{/if}
+		{#if $isShowGmail}
+			<Gmail />
 		{/if}
 	</div>
 	{#if $isShowMemo}
