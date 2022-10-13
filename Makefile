@@ -154,11 +154,12 @@ unused:
 	@$(TOOLS_DIR)/unused ./src
 
 download-icons:
-	@cat $(COMPONENTS_FILE)       \
-	| jq -r '.[]["icon"]'         \
-	| sed 's/\([A-Z]\)/-\1/g'     \
-	| sed -e 's/-//'              \
-	| awk '{print(tolower($$0))}' \
+	@cat $(COMPONENTS_FILE)            \
+	| jq -r '.[]                       \
+	| (select(.create != false).icon)' \
+	| sed 's/\([A-Z]\)/-\1/g'          \
+	| sed -e 's/-//'                   \
+	| awk '{print(tolower($$0))}'      \
 	| awk "$$makeIcon"
 
 icon:

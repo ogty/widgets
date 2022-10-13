@@ -51,7 +51,8 @@
 		"name": "TypeScript",
 		"icon": "TypeScript",
 		"url": "https://www.typescriptlang.org/play",
-		"default": true
+		"default": true,
+		"create": false
 	},
 	{
 		"name": "StackOverflow",
