@@ -8,6 +8,10 @@
 		isShowYouTube,
 		isShowSystemPreferences,
 		isShowActivityMonitor,
+		isShowMicrosoftTeams,
+		isShowGoogle,
+		isShowTwitter,
+		isShowSlack,
 		isShowTimer,
 		isShowTodo,
 		isShowMemo,
@@ -89,6 +93,66 @@
 					{/if}
 				</span>
 				<span class="ml-2">ActivityMonitor</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowMicrosoftTeams.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowMicrosoftTeams}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">MicrosoftTeams</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowGoogle.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowGoogle}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Google</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowTwitter.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowTwitter}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Twitter</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowSlack.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowSlack}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Slack</span>
 			</li>
 		</ul>
 	</div>

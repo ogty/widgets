@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Slack from '@icons/Slack.svelte';
+	import Activity from '@icons/Activity.svelte';
 	import Template from '@atoms/Template.svelte';
 	import { invoke } from '@tauri-apps/api/tauri';
 	import { defaultIconSize } from '$lib/stores';
 
 	const open = () => {
-		invoke('open_app', { name: 'Slack' });
+		invoke('open_app', { name: 'Activity Monitor.app' });
 	};
 </script>
 
 <Template>
 	<div class="cursor-pointer" on:click={open}>
-		<Slack size={defaultIconSize} />
+		<Activity size={defaultIconSize} />
 	</div>
 </Template>
