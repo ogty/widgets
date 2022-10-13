@@ -1,6 +1,6 @@
 <script lang="ts">
-	import GitHub from '@atoms/GitHub.svelte';
-	import YouTube from '@atoms/YouTube.svelte';
+	import GitHub from '@atoms/Github.svelte';
+	import YouTube from '@atoms/Youtube.svelte';
 	import SystemPreferences from '@atoms/SystemPreferences.svelte';
 	import ActivityMonitor from '@atoms/ActivityMonitor.svelte';
 	import MicrosoftTeams from '@atoms/MicrosoftTeams.svelte';

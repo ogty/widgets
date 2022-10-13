@@ -23,7 +23,7 @@ if [ "$DELETE" = true ]; then
   read answer
   if [ "$answer" != "yes" ]; then
     echo "Aborting..."
-      exit 1
+    exit 1
   fi
 fi
 

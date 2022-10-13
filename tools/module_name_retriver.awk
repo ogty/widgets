@@ -1,10 +1,10 @@
 /^(\t| ){1,}import.+from/ {
-    split($0, splited_line, "'");
-    module_path = splited_line[2];
-    print(module_path)
+  split($0, splited_line, "'");
+  module_path = splited_line[2];
+  print(module_path)
 
-    split(module_path, splited_module_path, "/");
-    splited_module_path_length = length(splited_module_path);
+  split(module_path, splited_module_path, "/");
+  splited_module_path_length = length(splited_module_path);
 
-    print(splited_module_path[splited_module_path_length]);
+  print(splited_module_path[splited_module_path_length]);
 }
