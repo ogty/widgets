@@ -3,6 +3,8 @@
 
 	type OnClick = (() => void) | null;
 
+	export let isLeftBorder = true;
+
 	export let rounded = true;
 	export let roundedTop = false;
 	export let roundedBottom = false;
@@ -25,7 +27,10 @@
 	<div class="w-full flex items-center mx-0 my-auto">
 		{#if LeftIcon || $$slots.left}
 			<div
-				class=" mr-2 py-2 pl-1 pr-2 border-r border-slate-300"
+				class="py-2 pl-1 border-r border-slate-300"
+				class:mr-2={isLeftBorder}
+				class:pr-2={isLeftBorder}
+				class:border-r={isLeftBorder}
 				class:cursor-pointer={leftOnClick ?? false}
 			>
 				<div class="w-full" on:click={leftOnClick}>

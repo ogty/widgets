@@ -1,0 +1,50 @@
+[
+	{
+		"name": "GitHub",
+		"icon": "Github",
+		"url": "https://github.com",
+		"default": true
+	},
+	{
+		"name": "YouTube",
+		"icon": "Youtube",
+		"url": "https://youtube.com",
+		"default": true
+	},
+	{
+		"name": "SystemPreferences",
+		"icon": "GearWideConnected",
+		"path": "System Preferences.app",
+		"default": true
+	},
+	{
+		"name": "ActivityMonitor",
+		"icon": "Activity",
+		"path": "Activity Monitor.app",
+		"default": true
+	},
+	{
+		"name": "MicrosoftTeams",
+		"icon": "MicrosoftTeams",
+		"path": "Microsoft Teams",
+		"default": true
+	},
+	{
+		"name": "Google",
+		"icon": "Google",
+		"url": "https://google.com",
+		"default": true
+	},
+	{
+		"name": "Twitter",
+		"icon": "Twitter",
+		"url": "https://twitter.com",
+		"default": true
+	},
+	{
+		"name": "Slack",
+		"icon": "Slack",
+		"path": "Slack",
+		"default": true
+	}
+]

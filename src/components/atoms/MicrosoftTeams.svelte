@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
+	import MicrosoftTeams from '@icons/MicrosoftTeams.svelte';
 	import Template from '@atoms/Template.svelte';
 	import { invoke } from '@tauri-apps/api/tauri';
-	import MicrosoftTeams from '@icons/MicrosoftTeams.svelte';
 	import { defaultIconSize } from '$lib/stores';
 
 	const open = () => {

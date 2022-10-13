@@ -1,12 +1,13 @@
 <script lang="ts">
 	export let size: number;
+	export let color: string;
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	width={size}
 	height={size}
-	fill="currentColor"
+	fill={color}
 	class="bi bi-toggle-on"
 	viewBox="0 0 16 16"
 >

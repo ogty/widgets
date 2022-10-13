@@ -1,37 +1,83 @@
 <script lang="ts">
+	import GitHub from '@atoms/GitHub.svelte';
+	import YouTube from '@atoms/YouTube.svelte';
+	import SystemPreferences from '@atoms/SystemPreferences.svelte';
+	import ActivityMonitor from '@atoms/ActivityMonitor.svelte';
+	import MicrosoftTeams from '@atoms/MicrosoftTeams.svelte';
+	import Google from '@atoms/Google.svelte';
+	import Twitter from '@atoms/Twitter.svelte';
+	import Slack from '@atoms/Slack.svelte';
+
 	import Todo from '@atoms/Todo.svelte';
 	import Memo from '@atoms/Memo.svelte';
 	import Date from '@molecules/Date.svelte';
-	import Slack from '@atoms/Slack.svelte';
 	import Timer from '@molecules/Timer.svelte';
-	import Github from '@atoms/Github.svelte';
-	import Google from '@atoms/Google.svelte';
-	import Twitter from '@atoms/Twitter.svelte';
-	import Youtube from '@atoms/Youtube.svelte';
 	import Terminal from '@molecules/Terminal.svelte';
-	import Incognito from '@atoms/Incognito.svelte';
+	import Settings from '@molecules/Settings.svelte';
 	import AudioPlayer from '@molecules/AudioPlayer.svelte';
-	import MicrosoftTeams from '@atoms/MicrosoftTeams.svelte';
-	import ActivityMonitor from '@atoms/ActivityMonitor.svelte';
-	import SystemPreferences from '@atoms/SystemPreferences.svelte';
+
+	import {
+		isShowGitHub,
+		isShowYouTube,
+		isShowSystemPreferences,
+		isShowActivityMonitor,
+		isShowMicrosoftTeams,
+		isShowGoogle,
+		isShowTwitter,
+		isShowSlack,
+		isShowDate,
+		isShowTimer,
+		isShowTodo,
+		isShowMemo,
+		isShowTerminal,
+		isShowAudioPlayer
+	} from '$lib/stores';
 </script>
 
-<div class="p-2 flex flex-wrap gap-2">
+<div class="p-2 flex flex-wrap gap-2 w-screen">
 	<div class="grid grid-flow-col gap-2">
-		<SystemPreferences />
-		<ActivityMonitor />
-		<MicrosoftTeams />
-		<Slack />
-		<Incognito />
-		<Google />
-		<Youtube />
-		<Twitter />
-		<Github />
-		<Timer />
-		<Date />
+		<Settings />
+		{#if $isShowGitHub}
+			<GitHub />
+		{/if}
+		{#if $isShowYouTube}
+			<YouTube />
+		{/if}
+		{#if $isShowSystemPreferences}
+			<SystemPreferences />
+		{/if}
+		{#if $isShowActivityMonitor}
+			<ActivityMonitor />
+		{/if}
+		{#if $isShowMicrosoftTeams}
+			<MicrosoftTeams />
+		{/if}
+		{#if $isShowGoogle}
+			<Google />
+		{/if}
+		{#if $isShowTwitter}
+			<Twitter />
+		{/if}
+		{#if $isShowSlack}
+			<Slack />
+		{/if}
+		{#if $isShowTimer}
+			<Timer />
+		{/if}
+		{#if $isShowDate}
+			<Date />
+		{/if}
 	</div>
-	<Memo />
-	<AudioPlayer />
-	<Terminal />
-	<Todo />
+	{#if $isShowMemo}
+		<Memo />
+	{/if}
+	{#if $isShowAudioPlayer}
+		<AudioPlayer />
+	{/if}
+	{#if $isShowTerminal}
+		<Terminal />
+	{/if}
+	{#if $isShowTodo}
+		<Todo />
+	{/if}
 </div>
