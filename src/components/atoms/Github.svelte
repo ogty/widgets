@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Github from '@icons/Github.svelte';
 	import Template from '@atoms/Template.svelte';
 	import { invoke } from '@tauri-apps/api/tauri';

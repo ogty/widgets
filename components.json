@@ -1,0 +1,30 @@
+[
+	{
+		"name": "GitHub",
+		"icon": "Github",
+		"url": "https://github.com",
+		"default": true,
+		"type": "site"
+	},
+	{
+		"name": "YouTube",
+		"icon": "Youtube",
+		"url": "https://youtube.com",
+		"default": true,
+		"type": "site"
+	},
+	{
+		"name": "SystemPreferences",
+		"icon": "GearWideConnected",
+		"path": "System Preferences.app",
+		"default": true,
+		"type": "app"
+	},
+	{
+		"name": "ActivityMonitor",
+		"icon": "Activity",
+		"path": "Activity Monitor.app",
+		"default": true,
+		"type": "app"
+	}
+]

@@ -23,7 +23,3 @@ export const isShowMemo = writable(true);
 export const isShowTimer = writable(true);
 export const isShowTerminal = writable(false);
 export const isShowAudioPlayer = writable(true);
-export const isShowGitHub = writable(true);
-export const isShowYouTube = writable(true);
-export const isShowSystemPreferences = writable(false);
-export const isShowActivityMonitor = writable(false);

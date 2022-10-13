@@ -1,6 +1,6 @@
-<script>
-	import Template from '@atoms/Template.svelte';
+<script lang="ts">
 	import Activity from '@icons/Activity.svelte';
+	import Template from '@atoms/Template.svelte';
 	import { invoke } from '@tauri-apps/api/tauri';
 	import { defaultIconSize } from '$lib/stores';
 
