@@ -21,12 +21,12 @@ If `app` is present, a component that opens the specified app is generated.
 
 ```json
 [
-  {
-    "name": "GitHub",
-    "icon": "Github",
-    "url": "https://github.com",
-    "default": true
-  }
+	{
+		"name": "GitHub",
+		"icon": "Github",
+		"url": "https://github.com",
+		"default": true
+	}
 ]
 ```
 
@@ -35,11 +35,11 @@ If `app` is present, a component that opens the specified app is generated.
 
 ```json
 {
-  "name": "",
-  "icon": "",
-  "url": "",
-  "path": "",
-  "default": true,
+	"name": "",
+	"icon": "",
+	"url": "",
+	"path": "",
+	"default": true
 }
 ```
 
