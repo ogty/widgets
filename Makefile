@@ -47,7 +47,7 @@ function capitalize(word) {
   capitalized = sprintf("%s%s", toupper(first_character), after_second_character);
   return capitalized;
 }
-                                                                                         
+
 {
   split($$0, array, "-");
   array_length = length(array);
@@ -95,45 +95,45 @@ endef
 export makeIcon
 
 
-name            ?=
-size            ?= 1
-color           ?= 0
-props           ?= false
-ICONS_URL       := https://raw.githubusercontent.com/twbs/icons/main/icons
-ICONS_DIR       := src/components/icons
-TOOLS_DIR       := tools
-COMPONENT_TYPE  := svelte
-componentName   := $(shell echo $(name) | awk '$(capitalizer)')
-componentFile   := $(shell echo $(componentName).$(COMPONENT_TYPE))
-icon_path       := $(ICONS_DIR)/$(componentFile)
-svelteSizeProp  := $(call svelteReplace,size,number)
-svelteColorProp := $(call svelteReplace,color,string)
+name                     ?=
+size                     ?= 1
+color                    ?= 0
+props                    ?= false
+
+svelteSizeProp           := $(call svelteReplace,size,number)
+svelteColorProp          := $(call svelteReplace,color,string)
+
+ICONS_URL                := https://raw.githubusercontent.com/twbs/icons/main/icons
 
 COMPONENTS_FILE          := components.json
 IMPORT_TMP_FILE          := import.tmp
+INDEX_CENTER_FILE        := index-center.svelte.tmp
 ICON_STATE_TMP_FILE      := iconState.tmp
 SETTINGS_START_TMP_FILE  := settings-start.tmp
 SETTINGS_CENTER_TMP_FILE := settings-center.tmp
 
-LIB_DIR          := src/lib
-ATOMS_DIR        := src/components/atoms
-ROUTES_DIR       := src/routes
-MOLECULES_DIR    := src/components/molecules
-COMPONENTS_NAME  := $(shell cat $(COMPONENTS_FILE) | jq -r '.[]["name"]')
-COMPONENTS_ICON  := $(shell cat $(COMPONENTS_FILE) | jq -r '.[]["icon"]')
-COMPONENTS_STATE := $(shell cat $(COMPONENTS_FILE) | jq -r '.[] | "\t\tisShow" + .name + ",\\n"')
+LIB_DIR                  := src/lib
+ICONS_DIR                := src/components/icons
+TOOLS_DIR                := tools
+ATOMS_DIR                := src/components/atoms
+ROUTES_DIR               := src/routes
+MOLECULES_DIR            := src/components/molecules
+APP_TEMPLATE_DIR         := templates/app
+LIST_TEMPLATE_DIR        := templates/list
+SITE_TEMPLATE_DIR        := templates/site
 
-APP_TEMPLATE_DIR  := templates/app
-LIST_TEMPLATE_DIR := templates/list
-SITE_TEMPLATE_DIR := templates/site
+COMPONENT_NAME           := $(shell echo $(name) | awk '$(capitalizer)')
+COMPONENT_FILE           := $(shell echo $(COMPONENT_NAME).svelte)
+COMPONENTS_NAME          := $(shell cat $(COMPONENTS_FILE) | jq -r '.[]["name"]')
+COMPONENTS_ICON          := $(shell cat $(COMPONENTS_FILE) | jq -r '.[]["icon"]')
+COMPONENTS_STATE         := $(shell cat $(COMPONENTS_FILE) | jq -r '.[] | "\t\tisShow" + .name + ",\\n"')
 
-INDEX_CENTER_FILE := index-center.svelte.tmp
-
-STORE_PATH          := templates/stores.ts.tpl
-INDEX_END_PATH      := templates/index-end.svelte.tpl
-INDEX_START_PATH    := templates/index-start.svelte.tpl
-SETTINGS_END_PATH   := templates/settings-end.svelte.tpl
-SETTINGS_START_PATH := templates/settings-start.svelte.tpl
+ICON_PATH                := $(ICONS_DIR)/$(COMPONENT_FILE)
+STORE_PATH               := templates/stores.ts.tpl
+INDEX_END_PATH           := templates/index-end.svelte.tpl
+INDEX_START_PATH         := templates/index-start.svelte.tpl
+SETTINGS_END_PATH        := templates/settings-end.svelte.tpl
+SETTINGS_START_PATH      := templates/settings-start.svelte.tpl
 
 
 run:
@@ -163,45 +163,42 @@ download-icons:
 	| awk "$$makeIcon"
 
 icon:
-ifeq ($(COMPONENT_TYPE), svelte)
 ifeq ($(shell expr $(size) + $(color)), 2)
 	@$(call mergeSvelteProp,$(svelteSizeProp),$(svelteColorProp)) \
 	| grep -v '^#if'                                              \
 	| grep -v '^#endif'                                           \
 	| grep -v '^#else'                                            \
-	> $(icon_path)
+	> $(ICON_PATH)
 	@curl -s $(ICONS_URL)/$(name).svg              \
 	| sed -e 's/width="16"/width={size}/'          \
 	| sed -e 's/height="16"/height={size}/'        \
 	| sed -e 's/fill="currentColor"/fill={color}/' \
-	>> $(icon_path)
+	>> $(ICON_PATH)
 else
 ifeq ($(size), 1)
-	@echo $(svelteSizeProp) > $(icon_path)
+	@echo $(svelteSizeProp) > $(ICON_PATH)
 	@curl -s $(ICONS_URL)/$(name).svg       \
 	| sed -e 's/width="16"/width={size}/'   \
 	| sed -e 's/height="16"/height={size}/' \
-	>> $(icon_path)
+	>> $(ICON_PATH)
 endif
 ifeq ($(color), 1)
-	@echo $(svelteColorProp) > $(icon_path)z
+	@echo $(svelteColorProp) > $(ICON_PATH)z
 	@curl -s $(ICONS_URL)/$(name).svg              \
 	| sed -e 's/fill="currentColor"/fill={color}/' \
-	>> $(icon_path)
+	>> $(ICON_PATH)
 endif
 ifeq ($(shell expr $(size) + $(color)), 0)
-	@curl -s $(ICONS_URL)/$(name).svg -o $(icon_path)
+	@curl -s $(ICONS_URL)/$(name).svg -o $(ICON_PATH)
 endif
 endif
 ifeq ($(props), true)
-	@cat $(icon_path)                         \
+	@cat $(ICON_PATH)                         \
 	| sed -e 's/<svg/<svg {\.\.\.$$$$props}/' \
-	> $(icon_path).tmp                        \
-	&& mv $(icon_path).tmp $(icon_path)
+	> $(ICON_PATH).tmp                        \
+	&& mv $(ICON_PATH).tmp $(ICON_PATH)
 endif
-	@sed -i "" -e 's/<\/svg>/<\/svg>\n/' $(icon_path)
-endif
-	@:
+	@sed -i "" -e 's/<\/svg>/<\/svg>\n/' $(ICON_PATH)
 
 atoms:
 	@make site-atoms app-atoms
