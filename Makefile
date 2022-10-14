@@ -257,13 +257,13 @@ app-atoms:
  	| awk "$$makeAppComponent"
 
 index-center:
-	@cat $(COMPONENTS_FILE) \
-	| jq -r '.[]            \
-	| "\t\t{#if $$isShow"   \
-	+ .name                 \
-	+ "}\n\t\t\t<"          \
-	+ .name                 \
-	+ " />\n\t\t{/if}"'     \
+	@cat $(COMPONENTS_FILE)                  \
+	| jq -r '.[]                             \
+	| "\t\t<svelte:component this={$$isShow" \
+	+ .name                                  \
+	+ " ? "                                  \
+	+ .name                                  \
+	+ " : Nothing} />"'                      \
 	> $(INDEX_CENTER_FILE)
 
 replace-index:

@@ -16,6 +16,7 @@
 	import Memo from '@atoms/Memo.svelte';
 	import Date from '@molecules/Date.svelte';
 	import Timer from '@molecules/Timer.svelte';
+	import Nothing from '@atoms/Nothing.svelte';
 	import Terminal from '@molecules/Terminal.svelte';
 	import Settings from '@molecules/Settings.svelte';
 	import AudioPlayer from '@molecules/AudioPlayer.svelte';
@@ -45,59 +46,23 @@
 <div class="p-2 flex flex-wrap gap-2 w-screen">
 	<div class="flex flex-wrap" style:gap="7.4px">
 		<Settings />
-		{#if $isShowTimer}
-			<Timer />
-		{/if}
-		{#if $isShowDate}
-			<Date />
-		{/if}
-		{#if $isShowGitHub}
-			<GitHub />
-		{/if}
-		{#if $isShowYouTube}
-			<YouTube />
-		{/if}
-		{#if $isShowSystemPreferences}
-			<SystemPreferences />
-		{/if}
-		{#if $isShowActivityMonitor}
-			<ActivityMonitor />
-		{/if}
-		{#if $isShowMicrosoftTeams}
-			<MicrosoftTeams />
-		{/if}
-		{#if $isShowGoogle}
-			<Google />
-		{/if}
-		{#if $isShowTwitter}
-			<Twitter />
-		{/if}
-		{#if $isShowSlack}
-			<Slack />
-		{/if}
-		{#if $isShowTypeScript}
-			<TypeScript />
-		{/if}
-		{#if $isShowStackOverflow}
-			<StackOverflow />
-		{/if}
-		{#if $isShowMedium}
-			<Medium />
-		{/if}
-		{#if $isShowGmail}
-			<Gmail />
-		{/if}
+		<svelte:component this={$isShowTimer ? Timer : Nothing} />
+		<svelte:component this={$isShowDate ? Date : Nothing} />
+		<svelte:component this={$isShowGitHub ? GitHub : Nothing} />
+		<svelte:component this={$isShowYouTube ? YouTube : Nothing} />
+		<svelte:component this={$isShowSystemPreferences ? SystemPreferences : Nothing} />
+		<svelte:component this={$isShowActivityMonitor ? ActivityMonitor : Nothing} />
+		<svelte:component this={$isShowMicrosoftTeams ? MicrosoftTeams : Nothing} />
+		<svelte:component this={$isShowGoogle ? Google : Nothing} />
+		<svelte:component this={$isShowTwitter ? Twitter : Nothing} />
+		<svelte:component this={$isShowSlack ? Slack : Nothing} />
+		<svelte:component this={$isShowTypeScript ? TypeScript : Nothing} />
+		<svelte:component this={$isShowStackOverflow ? StackOverflow : Nothing} />
+		<svelte:component this={$isShowMedium ? Medium : Nothing} />
+		<svelte:component this={$isShowGmail ? Gmail : Nothing} />
 	</div>
-	{#if $isShowMemo}
-		<Memo />
-	{/if}
-	{#if $isShowAudioPlayer}
-		<AudioPlayer />
-	{/if}
-	{#if $isShowTerminal}
-		<Terminal />
-	{/if}
-	{#if $isShowTodo}
-		<Todo />
-	{/if}
+	<svelte:component this={$isShowMemo ? Memo : Nothing} />
+	<svelte:component this={$isShowAudioPlayer ? AudioPlayer : Nothing} />
+	<svelte:component this={$isShowTerminal ? Terminal : Nothing} />
+	<svelte:component this={$isShowTodo ? Todo : Nothing} />
 </div>
