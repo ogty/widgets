@@ -11,6 +11,7 @@
 	import StackOverflow from '@atoms/StackOverflow.svelte';
 	import Medium from '@atoms/Medium.svelte';
 	import Gmail from '@atoms/Gmail.svelte';
+	import Kindle from '@atoms/Kindle.svelte';
 
 	import Todo from '@atoms/Todo.svelte';
 	import Memo from '@atoms/Memo.svelte';
@@ -34,6 +35,7 @@
 		isShowStackOverflow,
 		isShowMedium,
 		isShowGmail,
+		isShowKindle,
 		isShowDate,
 		isShowTimer,
 		isShowTodo,
@@ -60,6 +62,7 @@
 		<svelte:component this={$isShowStackOverflow ? StackOverflow : Nothing} />
 		<svelte:component this={$isShowMedium ? Medium : Nothing} />
 		<svelte:component this={$isShowGmail ? Gmail : Nothing} />
+		<svelte:component this={$isShowKindle ? Kindle : Nothing} />
 	</div>
 	<svelte:component this={$isShowMemo ? Memo : Nothing} />
 	<svelte:component this={$isShowAudioPlayer ? AudioPlayer : Nothing} />

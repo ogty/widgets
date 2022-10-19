@@ -16,6 +16,7 @@
 		isShowStackOverflow,
 		isShowMedium,
 		isShowGmail,
+		isShowKindle,
 		isShowTimer,
 		isShowTodo,
 		isShowMemo,
@@ -307,6 +308,21 @@
 					{/if}
 				</span>
 				<span class="ml-2">Gmail</span>
+			</li>
+			<li
+				class="flex"
+				on:click={() => {
+					isShowKindle.update((value) => !value);
+				}}
+			>
+				<span class="cursor-pointer">
+					{#if $isShowKindle}
+						<ToggleOn size={defaultIconSize} color="#245def" />
+					{:else}
+						<ToggleOff size={defaultIconSize} />
+					{/if}
+				</span>
+				<span class="ml-2">Kindle</span>
 			</li>
 		</ul>
 	</div>

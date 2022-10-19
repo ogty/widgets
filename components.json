@@ -72,5 +72,11 @@
 		"url": "https://mail.google.com/mail",
 		"default": true,
 		"create": false
+	},
+	{
+		"name": "Kindle",
+		"icon": "Book",
+		"path": "Kindle",
+		"default": true
 	}
 ]

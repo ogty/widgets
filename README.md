@@ -30,6 +30,12 @@ If `app` is present, a component that opens the specified app is generated.
 ]
 ```
 
+### 🤖 Create and Execute
+
+```zsh
+$ make run
+```
+
 ### 📷 Creating icons from components.json
 
 ```zsh
